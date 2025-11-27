@@ -1,35 +1,38 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import { Drawer } from 'expo-router/drawer';
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
+export default function Layout() {
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
-      <Tabs.Screen
-        name="index"
+    <Drawer>
+      <Drawer.Screen
+        name="index" // This is the name of the page and must match the url from root
         options={{
+          drawerLabel: 'Home',
           title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+
+          headerTransparent: true
         }}
       />
-      <Tabs.Screen
-        name="explore"
+      <Drawer.Screen
+        name="register" // This is the name of the page and must match the url from root
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          drawerLabel: 'Register',
+          headerTransparent: true,
         }}
       />
-    </Tabs>
+      <Drawer.Screen
+        name="signIn" // This is the name of the page and must match the url from root
+        options={{
+          drawerLabel: 'Sign In',
+          headerTransparent: true,
+        }}
+      />
+      <Drawer.Screen
+        name="festival" // This is the name of the page and must match the url from root
+        options={{
+          drawerLabel: 'Festival',
+          headerTransparent: true
+        }}
+      />
+    </Drawer>
   );
 }
