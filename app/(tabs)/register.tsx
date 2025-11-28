@@ -1,4 +1,3 @@
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { Button, StyleSheet, Text, View } from "react-native";
@@ -12,7 +11,7 @@ export default function App() {
       .min(5, { message: "Username must be at least 5 characters." })
       .max(30, { message: "Username must be at most 30 characters." }),
     email: z.string().email({ message: "Please enter a valid email address." }),
-    age: z.number().min(18, { message: "You must be over 18 years old." }),
+    pwd: z.string().min(7, { message: "Password has to be over 6 characters long." }),
   });
 
   type UserFormType = z.infer<typeof userSchema>;
@@ -30,14 +29,13 @@ export default function App() {
   };
 
   return (
-    <View>
+    <View style={styles.body}>
       <Controller
         control={control}
         render={({
           field: { onChange, onBlur, value },
           fieldState: { error },
         }) => (
-          <View>
             <TextInput
               mode="outlined"
               label="Username"
@@ -47,7 +45,6 @@ export default function App() {
               activeOutlineColor={error ? "red" : "black"}
               style={styles.input}
             />
-          </View>
         )}
         name="username"
       />
@@ -85,25 +82,18 @@ export default function App() {
         }) => (
           <TextInput
             mode="outlined"
-            label="Age"
+            label="Password"
             onBlur={onBlur}
-            onChangeText={(text) => {
-              const parsed = parseInt(text, 10);
-              onChange(isNaN(parsed) ? "" : parsed);
-            }}
-            value={
-              value === null || value === undefined ? "" : value.toString()
-            }
-            placeholder=""
-            keyboardType="numeric"
-            activeOutlineColor={error ? "red" : "black"}
+            onChangeText={onChange}
+            value={value}
+            activeOutlineColor={error ? "#FF586B" : "#090932"}
             style={styles.input}
           />
         )}
-        name="age"
+        name="pwd"
       />
-      {errors.age && (
-        <Text style={{ color: "#ff8566" }}>{errors.age.message}</Text>
+      {errors.pwd && (
+        <Text style={{ color: "#ff8566" }}>{errors.pwd.message}</Text>
       )}
 
       <Button title="Submit" onPress={handleSubmit(onSubmit)} />
@@ -111,9 +101,21 @@ export default function App() {
   );
 }
 
+
 const styles = StyleSheet.create({
+  body: {
+    backgroundColor: '#090932',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+  },
+  header: {
+    color: 'white'
+  },
   input: {
-    marginVertical: 10,
+    color: 'white',
+    width: '85%',
+    marginBottom: '1%'
   },
 
 });

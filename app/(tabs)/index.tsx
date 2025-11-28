@@ -9,6 +9,7 @@ export default function HomeScreen() {
   return (
     <View style={styles.body}>
       <Text style={styles.header}>Testing</Text>
+      <Image source={require('../../assets/country_map/NL/netherlands_base.svg')} style={styles.map}/>
       <Link href="/festival" style={styles.link} asChild>
         <Pressable>
           <Image source={require('../../assets/images/location-pin.png')} style={styles.pin} />
@@ -20,9 +21,8 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   body: {
-    backgroundColor: 'rgb(5,5,90)',
+    backgroundColor: '#151561',
     alignItems: 'center',
-    justifyContent: 'center',
     flex: 1,
   },
   header: {
@@ -37,5 +37,11 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     marginTop: 20,
+  },
+  map: {
+    flex: 1,
+    margin: '0%',
+    width: '40%',
+    resizeMode: 'contain'
   },
 });

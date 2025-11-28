@@ -2,35 +2,66 @@ import { Drawer } from 'expo-router/drawer';
 
 export default function Layout() {
   return (
-    <Drawer>
+    <Drawer
+    screenOptions={{
+      drawerLabelStyle: {
+            fontSize: 16,
+          },
+      drawerActiveTintColor: "#8A2BE2",
+      drawerInactiveTintColor: "#5D089A",
+      drawerPosition: 'right',
+      headerTitleStyle: {
+            display: 'none'
+          },
+    }}>
       <Drawer.Screen
         name="index" // This is the name of the page and must match the url from root
         options={{
           drawerLabel: 'Home',
-          title: 'Home',
 
-          headerTransparent: true
+          swipeEnabled: true,
+          headerTransparent: true,
+          overlayColor: "#090932",
+          drawerStyle: {
+            backgroundColor: '#151561'
+          }
         }}
       />
       <Drawer.Screen
         name="register" // This is the name of the page and must match the url from root
         options={{
           drawerLabel: 'Register',
+
+          swipeEnabled: true,
           headerTransparent: true,
+          overlayColor: "#090932",
+          drawerStyle: {
+            backgroundColor: '#151561'
+          }
         }}
       />
       <Drawer.Screen
         name="signIn" // This is the name of the page and must match the url from root
         options={{
           drawerLabel: 'Sign In',
+          swipeEnabled: true,
           headerTransparent: true,
+          overlayColor: "#090932",
+          drawerStyle: {
+            backgroundColor: '#151561'
+          }
         }}
       />
       <Drawer.Screen
         name="festival" // This is the name of the page and must match the url from root
         options={{
           drawerLabel: 'Festival',
-          headerTransparent: true
+          swipeEnabled: true,
+          headerTransparent: true,
+          overlayColor: "#090932",
+          drawerStyle: {
+            backgroundColor: '#151561'
+          }
         }}
       />
     </Drawer>
