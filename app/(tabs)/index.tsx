@@ -1,21 +1,30 @@
-import { Image } from 'expo-image';
+import { Image, ImageBackground } from 'expo-image';
 import { Link } from 'expo-router';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text } from 'react-native';
 // Assests
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import "../../assets/images/location-pin.png";
 
 
 export default function HomeScreen() {
   return (
-    <View style={styles.body}>
-      <Text style={styles.header}>Testing</Text>
-      <Image source={require('../../assets/country_map/NL/netherlands_base.svg')} style={styles.map}/>
-      <Link href="/festival" style={styles.link} asChild>
+    <SafeAreaProvider>
+    <SafeAreaView style={styles.body} edges={['left', 'right']}>
+      <Text style={styles.header}>Festivals in The Netherlands</Text>
+      <ImageBackground source={require('../../assets/country_map/NL/netherlands_base.svg')} style={styles.map} resizeMode='contain'>
+        <Link href="/festival" style={styles.link} asChild>
+          <Pressable>
+            <Image source={require('../../assets/images/location-pin.png')} style={styles.pin} resizeMode='contain'/>
+          </Pressable>
+        </Link>
+      </ImageBackground>
+      <Link href='/festival'>
         <Pressable>
-          <Image source={require('../../assets/images/location-pin.png')} style={styles.pin} />
+          <Text>See all available festivals</Text>
         </Pressable>
       </Link>
-    </View>
+    </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
@@ -23,25 +32,34 @@ const styles = StyleSheet.create({
   body: {
     backgroundColor: '#151561',
     alignItems: 'center',
+    textAlign: 'left',
     flex: 1,
   },
   header: {
-    color: 'white'
+    color: 'white',
+    fontStyle: 'normal',
+    fontWeight: '800',
+    fontSize: 25,
+    marginBottom: -150,
+    marginTop: 120,
   },
   pin: {
     flex: 1,
-    width: '100%',
-    resizeMode: 'contain',
+
+    width: 25,
+    marginTop: 20,
+    marginLeft: 70
   },
   link: {
-    width: 50,
-    height: 50,
-    marginTop: 20,
+    flex: 1,
+    width: '100%',
   },
   map: {
     flex: 1,
-    margin: '0%',
-    width: '40%',
-    resizeMode: 'contain'
+    width: '70%',
+    justifyContent: 'center',
+    marginTop: -200,
   },
+
+  
 });

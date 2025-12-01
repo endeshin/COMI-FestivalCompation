@@ -4,7 +4,7 @@ import { Button, StyleSheet, Text, View } from "react-native";
 import { TextInput } from "react-native-paper";
 import { z } from "zod";
 
-export default function App() {
+export default function RegisterPage() {
   const userSchema = z.object({
     username: z
       .string()
