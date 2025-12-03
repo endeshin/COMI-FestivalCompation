@@ -1,3 +1,4 @@
+import CustomDrawerContent from '@/components/customDrawerContent';
 import { Drawer } from 'expo-router/drawer';
 
 export default function Layout() {
@@ -7,13 +8,15 @@ export default function Layout() {
       drawerLabelStyle: {
             fontSize: 16,
           },
-      drawerActiveTintColor: "#8A2BE2",
-      drawerInactiveTintColor: "#5D089A",
+      drawerActiveTintColor: "white",
+      drawerInactiveTintColor: "#8A2BE2",
       drawerPosition: 'right',
       headerTitleStyle: {
             display: 'none'
           },
-    }}>
+    }}
+    drawerContent={CustomDrawerContent}
+    >
       <Drawer.Screen
         name="index" // This is the name of the page and must match the url from root
         options={{

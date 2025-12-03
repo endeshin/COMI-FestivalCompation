@@ -40,8 +40,7 @@ const styles = StyleSheet.create({
     fontStyle: 'normal',
     fontWeight: '800',
     fontSize: 25,
-    marginBottom: -150,
-    marginTop: 120,
+    marginTop: '30%',
   },
   pin: {
     flex: 1,
@@ -58,7 +57,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '70%',
     justifyContent: 'center',
-    marginTop: -200,
+    marginTop: '0%',
   },
 
   
