@@ -47,6 +47,7 @@ export default function Layout() {
         name="signIn" // This is the name of the page and must match the url from root
         options={{
           drawerLabel: 'Sign In',
+
           swipeEnabled: true,
           headerTransparent: true,
           overlayColor: "#090932",
@@ -56,9 +57,22 @@ export default function Layout() {
         }}
       />
       <Drawer.Screen
-        name="festival" // This is the name of the page and must match the url from root
+        name="festivals" // This is the name of the page and must match the url from root
         options={{
-          drawerLabel: 'Festival',
+          drawerLabel: 'Festivals',
+          swipeEnabled: true,
+          headerTransparent: true,
+          overlayColor: "#090932",
+          drawerStyle: {
+            backgroundColor: '#151561'
+          }
+        }}
+      />
+
+            <Drawer.Screen
+        name="fest" // This is the name of the page and must match the url from root
+        options={{
+          drawerLabel: '',
           swipeEnabled: true,
           headerTransparent: true,
           overlayColor: "#090932",

@@ -5,7 +5,6 @@ export default function FestivalScreen() {
     <View style={styles.body}>
       <Text style={styles.header}>Specific festival in {}</Text>
       <View style={styles.map}>
-        <Text style={styles.text}>Here will be the upcoming map laying</Text>
       </View>
       <Text style={styles.text}>Here will be the upcoming map laying</Text>
     </View>
@@ -35,15 +34,20 @@ const styles = StyleSheet.create({
 
   },
   text: {
+    margin: 0,
     color: 'white',
     fontSize: 15
   }
 });
 
-// <Map initialRegion={initialRegion} />
-// const initialRegion = {
-//        latitude: 37.78825, // Initial latitude
-//        longitude: -122.4324, // Initial longitude
-//        latitudeDelta: 0.0922,
-//        longitudeDelta: 0.0421,
-//    };
+
+// <GoogleMaps.View
+//          style={StyleSheet.absoluteFill}
+//          cameraPosition={{
+//            coordinates: {
+//              latitude: 37.8199,
+//              longitude: -122.4783
+//            },
+//            zoom: 12
+//          }}
+//        />

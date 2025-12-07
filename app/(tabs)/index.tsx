@@ -12,13 +12,13 @@ export default function HomeScreen() {
     <SafeAreaView style={styles.body} edges={['left', 'right']}>
       <Text style={styles.header}>Festivals in The Netherlands</Text>
       <ImageBackground source={require('../../assets/country_map/NL/netherlands_base.svg')} style={styles.map} resizeMode='contain'>
-        <Link href="/festival" style={styles.link} asChild>
+        <Link href="/fest" style={styles.link} asChild>
           <Pressable>
             <Image source={require('../../assets/images/location-pin.png')} style={styles.pin} resizeMode='contain'/>
           </Pressable>
         </Link>
       </ImageBackground>
-      <Link href='/festival'>
+      <Link href='/festivals'>
         <Pressable>
           <Text>See all available festivals</Text>
         </Pressable>
