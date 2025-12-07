@@ -69,7 +69,7 @@ export default function Layout() {
         }}
       />
 
-            <Drawer.Screen
+      <Drawer.Screen
         name="fest" // This is the name of the page and must match the url from root
         options={{
           drawerLabel: '',

@@ -3,10 +3,8 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function FestivalScreen() {
   return (
     <View style={styles.body}>
-      <Text style={styles.header}>Specific festival in {}</Text>
-      <View style={styles.map}>
-      </View>
-      <Text style={styles.text}>Here will be the upcoming map laying</Text>
+      <Text style={styles.header}>List of all available Festivals:</Text>
+      <Text style={styles.text}>Current country: The Netherlands</Text>
     </View>
   );
 }
@@ -15,7 +13,6 @@ const styles = StyleSheet.create({
   body: {
     backgroundColor: 'rgb(21, 21, 97)',
     alignItems: 'center',
-    justifyContent: 'center',
     flex: 1,
 
     resizeMode: 'contain',

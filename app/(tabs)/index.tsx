@@ -46,12 +46,12 @@ const styles = StyleSheet.create({
     flex: 1,
 
     width: 25,
-    marginTop: 20,
-    marginLeft: 70
   },
   link: {
     flex: 1,
-    width: '100%',
+    width: '5%',
+    marginTop: 20,
+    marginLeft: 70
   },
   map: {
     flex: 1,

@@ -30,6 +30,7 @@ export default function RegisterPage() {
 
   return (
     <View style={styles.body}>
+      <Text style={styles.headerText}>Register</Text>
       <Controller
         control={control}
         render={({
@@ -96,7 +97,7 @@ export default function RegisterPage() {
         <Text style={{ color: "#ff8566" }}>{errors.pwd.message}</Text>
       )}
 
-      <Button title="Submit" onPress={handleSubmit(onSubmit)} />
+      <Button title="Submit" onPress={handleSubmit(onSubmit)} color={'#5D089A'}/>
     </View>
   );
 }
@@ -109,13 +110,20 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flex: 1,
   },
-  header: {
-    color: 'white'
+  headerText: {
+    color: '#83FF96',
+    fontSize: 35,
+    fontWeight: 700,
+
+    marginBottom: 5
   },
   input: {
     color: 'white',
     width: '85%',
-    marginBottom: '1%'
+    marginBottom: 15
   },
-
+  btn: {
+    color: 'white',
+    backgroundColor: '#5D089A'
+  }
 });

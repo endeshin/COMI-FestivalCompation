@@ -27,6 +27,9 @@ export default function SignInScreen() {
 
   return (
     <View style={styles.body}>
+      <View>
+        <Text style={styles.headerText}>Sign In</Text>
+      </View>
       <Controller
         control={control}
         render={({
@@ -35,7 +38,7 @@ export default function SignInScreen() {
         }) => (
             <TextInput
               mode="outlined"
-              label="Username"
+              label="email"
               onBlur={onBlur}
               onChangeText={onChange}
               value={value}
@@ -43,10 +46,10 @@ export default function SignInScreen() {
               style={styles.input}
             />
         )}
-        name="username"
+        name="email"
       />
-      {errors.username && (
-        <Text style={{ color: "#ff8566" }}>{errors.username.message}</Text>
+      {errors.email && (
+        <Text style={{ color: "#ff8566" }}>{errors.email.message}</Text>
       )}
 
       <Controller
@@ -71,7 +74,7 @@ export default function SignInScreen() {
         <Text style={{ color: "#ff8566" }}>{errors.pwd.message}</Text>
       )}
 
-      <Button title="Submit" onPress={handleSubmit(onSubmit)} />
+      <Button title="Submit" onPress={handleSubmit(onSubmit)}  color={'#5D089A'}/>
     </View>
   );
 }
@@ -83,12 +86,20 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flex: 1,
   },
-  header: {
-    color: 'white'
+  headerText: {
+    color: '#00BFFF',
+    fontSize: 35,
+    fontWeight: 700,
+
+    marginBottom: 5
   },
   input: {
     color: 'white',
     width: '85%',
-    marginBottom: '1%'
+    marginBottom: 15
   },
+  btn: {
+    color: 'white',
+    backgroundColor: '#5D089A'
+  }
 });

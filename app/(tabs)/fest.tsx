@@ -1,12 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
 export default function FestivalScreen() {
   return (
     <View style={styles.body}>
-      <Text style={styles.header}>Specific festival in {}</Text>
-      <View style={styles.map}>
-      </View>
-      <Text style={styles.text}>Here will be the upcoming map laying</Text>
+      <Text style={styles.header}>Testing festival</Text>
+      <Image source={require('../../assets/images/testing-route.png')} resizeMode='contain' style={styles.map}/>
+      <Text style={styles.cat}>Music festival</Text>
     </View>
   );
 }
@@ -17,9 +16,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1,
-
-    resizeMode: 'contain',
-    paddingTop: '25%'
+    textAlign: 'left'
   },
   header: {
     color: 'white',
@@ -27,20 +24,20 @@ const styles = StyleSheet.create({
     fontSize: 25
   },
   map: {
-    flex: 1,
-    marginTop: '10%',
-    marginBottom: '10%',
-    backgroundColor: 'black'
+    marginTop: 10,
+    marginBottom: 10,
+    width: 365
 
   },
-  text: {
+  cat: {
     margin: 0,
     color: 'white',
-    fontSize: 15
+    fontSize: 15,
   }
 });
 
 
+// Made for google maps - needed API key - needed card info!
 // <GoogleMaps.View
 //          style={StyleSheet.absoluteFill}
 //          cameraPosition={{
